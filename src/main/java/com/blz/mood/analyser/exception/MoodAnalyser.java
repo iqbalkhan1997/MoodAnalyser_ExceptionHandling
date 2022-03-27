@@ -12,9 +12,13 @@ public class MoodAnalyser {
     }
 
     public String analyseMood() {
-            if (this.message.toUpperCase().contains("SAD"))
+        try {
+            if (this.message.contains("SAD"))
                 return "SAD";
-            return "HAPPY";
-
+            }
+            catch (Exception e) {
+                return "HAPPY";
+            }
+        return "HAPPY";
     }
 }
